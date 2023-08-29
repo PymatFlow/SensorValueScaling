@@ -9,9 +9,10 @@ MATLAB environment
 Copy the function sensor_conversion.m into your MATLAB working directory.
 Call the function in your MATLAB script or command window.
 Function Signature
-'''
+```
 [actual_value, sensor_output] = sensor_conversion(mode, value, word_length, frac_length, min_value, max_value)
-'''
+```
+
 ## Parameters
 mode: String, either 'toActual' for converting sensor output to actual value or 'toSensor' for the reverse.
 value: The value to be converted.
@@ -23,17 +24,20 @@ max_value: The maximum physical value the sensor can measure.
 
 ## Examples
 To convert from sensor output to actual value:
-'''
+```
+
 % Convert a 16-bit sensor output of 6550 to its actual value
 % using a Q15.1 format and physical range of 300 to 1100
 [actual_value, ~] = sensor_conversion('toActual', 6550, 16, 1, 300, 1100);
-'''
+```
+
 
 To convert from an actual value to sensor output:
-'''
+```
+
 % Convert an actual value of 800 to a 16-bit sensor output
 % using a Q15.1 format and physical range of 300 to 1100
 [~, sensor_output] = sensor_conversion('toSensor', 800, 16, 1, 300, 1100);
-'''
+```
 
 
